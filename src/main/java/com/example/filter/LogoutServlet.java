@@ -1,4 +1,4 @@
-package com.example.servlet;
+package com.example.filter;
 
 
 import javax.servlet.ServletException;
@@ -21,5 +21,4 @@ public class LogoutServlet extends HttpServlet {
 
         resp.sendRedirect(req.getContextPath() + "login.jsp");
     }
-    //write your code here!
 }

@@ -1,4 +1,4 @@
-package com.example.servlet;
+package com.example.filter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,9 +15,9 @@ public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession(false);
         if(session !=null && session.getAttribute("user") != null){
-            resp.sendRedirect(req.getContextPath() + "/login.jsp");
-        } else {
             resp.sendRedirect(req.getContextPath() + "/user/hello.jsp");
+        } else {
+            resp.sendRedirect(req.getContextPath() + "/login.jsp");
         }
     }
 
@@ -35,6 +35,4 @@ public class LoginServlet extends HttpServlet {
             req.getRequestDispatcher("/login.jsp").forward(req,resp);
         }
     }
-
-    //write your code here!
 }
